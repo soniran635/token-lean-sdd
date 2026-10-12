@@ -38,7 +38,43 @@ flowchart TD
     E -->|Criteria Missing| F[❌ Local Reject: Actionable Fix Feedback - Zero Cost]
     E -->|Criteria Satisfied| G[✅ Local Pass: Ready for PR & Cloud Review]
     G --> H[Enterprise Token FinOps Dashboard: Savings Logged]
+```
 
+---
+
+## ⚙️ Core Architectural Capabilities
+
+### 1. Smart Context & Diff Pruner (`SmartContextPruner`)
+Ingests raw git diffs and extracts *only* the functional code delta (interfaces, business logic, and test assertions), stripping out git headers, whitespace, and comment noise to reduce payload size by **60% to 80%**.
+
+### 2. Local Pre-Flight Spec Gate (`LocalPreflightGate`)
+Audits the pruned diff against Component Card acceptance criteria locally on the developer's laptop using open-source models (via Ollama) at **$0 cost**, catching omissions before triggering expensive cloud tokens or human review loops.
+
+### 3. Enterprise FinOps Savings Calculator
+Quantifies the exact tokens saved and cloud API dollars avoided per PR and across engineering squads.
+
+---
+
+## 🛠️ Tech Stack
+
+* **Engine:** Python 3.9+, Pydantic v2, Pandas
+* **Local AI Inference:** [Ollama](https://ollama.com) (`llama3.2:3b`)
+* **Interactive Dashboard:** Streamlit
+* **License:** MIT License
+
+---
+
+## 🚀 Quickstart
+
+### 1. Clone & Set Up
+```bash
+git clone https://github.com/soniran635/token-lean-sdd.git
+cd token-lean-sdd
+
+python3 -m venv venv
+source venv/bin/activate
+
+pip install -r requirements.txt
 
 
 

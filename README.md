@@ -66,7 +66,7 @@ Quantifies the exact tokens saved and cloud API dollars avoided per PR and acros
 
 ## 🚀 Quickstart
 
-### 1. Clone & Set Up
+### Clone & Set Up
 ```bash
 git clone https://github.com/soniran635/token-lean-sdd.git
 cd token-lean-sdd
@@ -76,8 +76,8 @@ source venv/bin/activate
 
 pip install -r requirements.txt
 
-### 2. Launch the Dashboard
-```bash
+Launch the Dashboard
+
 streamlit run ui/app.py
 
 Open http://localhost:8501 to test diff pruning, run local pre-flight gates, and simulate enterprise monthly token savings.

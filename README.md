@@ -38,6 +38,7 @@ flowchart TD
     E -->|Criteria Missing| F[❌ LOCAL REJECT: Actionable Fix Feedback ($0 Cost)]
     E -->|Criteria Satisfied| G[✅ LOCAL PASS: Ready for PR & Cloud Agent Review]
     G --> H[Enterprise Token FinOps Dashboard: Dollar Savings Logged]
+    ```
 ##⚙️ Core Architectural Capabilities
 1. Smart Context & Diff Pruner (SmartContextPruner)
 Ingests raw git diffs and extracts only the functional code delta (interfaces, business logic, and test assertions), stripping out git headers, whitespace, and comment noise to reduce payload size by 60% to 80%.
